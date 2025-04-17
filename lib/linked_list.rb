@@ -40,7 +40,7 @@ class LinkedList
       list += "( #{current.value} ) -> "
       current = current.next_node
     end
-    list += 'nil' if current.next_node.nil?
+    list += "( #{current.value} ) -> nil" if current.next_node.nil?
     list
   end
 end
