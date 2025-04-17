@@ -29,8 +29,12 @@ class LinkedList
   end
 
   def prepend(value)
-    node = Node.new
-    node.value = value    
+    if @head.nil?
+      @head = Node.new(value)
+    else
+      old_head = @head
+      @head = Node.new(value, old_head)
+    end
   end
  
   def to_s

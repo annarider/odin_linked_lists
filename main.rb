@@ -15,3 +15,6 @@ list.append('snake')
 list.append('turtle')
 
 puts list # answer: ( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( snake ) -> ( turtle ) -> nil
+
+list.prepend('ant')
+puts list
