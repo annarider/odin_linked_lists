@@ -20,3 +20,5 @@ puts list.size # 6
 list.prepend('ant')
 puts list
 puts list.size # 7
+
+puts list.head

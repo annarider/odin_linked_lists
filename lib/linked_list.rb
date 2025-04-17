@@ -49,6 +49,10 @@ class LinkedList
     size += 1
   end
  
+  def head
+    @head.value    
+  end
+
   def to_s
     list = ''
     current = @head
