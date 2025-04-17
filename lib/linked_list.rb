@@ -7,7 +7,7 @@
 # @example Create a new LinkedList
 # list = LinkedList.new
 #
-require_relative 'lib/node'
+require_relative 'node'
 
 class LinkedList
   attr_accessor :head, :tail
@@ -15,5 +15,19 @@ class LinkedList
   def initialize
     @head = nil
     @tail = nil
+  end
+
+  private
+
+  def append(value)
+    node = Node.new
+    node.value = value
+    current = @head
+    return @head = node if current.nil?
+
+    unless current.next_node.nil?
+      current = current.next_node
+    end
+    current.next_node = node if current.next_node.nil
   end
 end
