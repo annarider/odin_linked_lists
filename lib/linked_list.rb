@@ -99,6 +99,18 @@ class LinkedList
     false
   end
 
+  def find(value)
+    index = 0
+    current = @head
+    until current.next_node.nil?
+      return index if current.value == value
+
+      index += 1
+      current = current.next_node
+    end
+    nil
+  end
+
   def to_s
     list = ''
     current = @head

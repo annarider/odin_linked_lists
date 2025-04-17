@@ -29,5 +29,8 @@ puts list.at(4)
 puts list.contains?('ant')
 puts list.contains?('hamster')
 puts list.contains?('deer')
+puts list.find('ant')
+puts list.find('hamster')
+p list.find('deer')
 puts list.pop
 puts list
