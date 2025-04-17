@@ -17,8 +17,6 @@ class LinkedList
     @tail = nil
   end
 
-  private
-
   def append(value)
     node = Node.new
     node.value = value
@@ -28,6 +26,16 @@ class LinkedList
     unless current.next_node.nil?
       current = current.next_node
     end
-    current.next_node = node if current.next_node.nil
+    current.next_node = node if current.next_node.nil?
+  end
+
+  def to_s
+    list = ''
+    current = @head
+    unless current.next_node.nil?
+      list += "( #{current.value} ) -> "
+    end
+    list += 'nil' if current.next_node.nil?
+    list
   end
 end
