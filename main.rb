@@ -41,3 +41,10 @@ list.insert_at('turtle', 3)
 list.insert_at('zebra', 23)
 puts list
 puts list.size
+
+list.remove_at(5)
+puts list
+list.remove_at(2)
+puts list
+list.remove_at(4)
+puts list
