@@ -36,6 +36,18 @@ class LinkedList
       @head = Node.new(value, old_head)
     end
   end
+
+  def size
+    size = 0
+    return size if @head.nil?
+
+    current = @head
+    until current.next_node.nil?
+      size += 1
+      current = current.next_node
+    end
+    size += 1
+  end
  
   def to_s
     list = ''
