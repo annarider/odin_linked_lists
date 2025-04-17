@@ -26,5 +26,8 @@ puts list.tail
 
 puts list.at(4)
 
+puts list.contains?('ant')
+puts list.contains?('hamster')
+puts list.contains?('deer')
 puts list.pop
 puts list
