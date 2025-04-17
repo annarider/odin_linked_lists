@@ -10,11 +10,10 @@
 require_relative 'node'
 
 class LinkedList
-  attr_accessor :head, :tail
+  attr_accessor :head
 
   def initialize
     @head = nil
-    @tail = nil
   end
 
   def append(value)
@@ -38,6 +37,7 @@ class LinkedList
     current = @head
     unless current.next_node.nil?
       list += "( #{current.value} ) -> "
+      current = current.next_node
     end
     list += 'nil' if current.next_node.nil?
     list
