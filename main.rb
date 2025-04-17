@@ -25,3 +25,6 @@ puts list.head
 puts list.tail
 
 puts list.at(4)
+
+puts list.pop
+puts list

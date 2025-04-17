@@ -75,6 +75,18 @@ class LinkedList
     current.value
   end
 
+  def pop
+    return nil if @head.nil?
+
+    current = @head
+    previous = current
+    until current.next_node.nil?
+      previous = current
+      current = current.next_node
+    end
+    previous.next_node = nil
+  end
+
   def to_s
     list = ''
     current = @head
