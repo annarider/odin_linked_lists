@@ -22,3 +22,6 @@ puts list
 puts list.size # 7
 
 puts list.head
+puts list.tail
+
+puts list.at(4)

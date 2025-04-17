@@ -53,6 +53,28 @@ class LinkedList
     @head.value    
   end
 
+  def tail
+    return nil if @head.nil?
+
+    current = @head
+    until current.next_node.nil?
+      current = current.next_node
+    end
+    current.value
+  end
+
+  def at(index)
+    current_index = 0
+    return nil if @head.nil?
+
+    current = @head
+    until index == current_index
+      current = current.next_node
+      current_index += 1
+    end
+    current.value
+  end
+
   def to_s
     list = ''
     current = @head
