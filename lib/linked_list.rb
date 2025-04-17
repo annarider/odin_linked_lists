@@ -1,17 +1,14 @@
 # frozen_string_literal: true
 
-# main contains the main execution
-# for running my LinkedList.
+# LinkedList contains the methods
+# for implementing LinkedLists in
+# Ruby.
+# 
+# @example Create a new LinkedList
+# list = LinkedList.new
 #
-require_relative 'lib/linked_list'
+require_relative 'lib/node'
 
-list = LinkedList.new
-
-list.append('dog')
-list.append('cat')
-list.append('parrot')
-list.append('hamster')
-list.append('snake')
-list.append('turtle')
-
-puts list # answer: ( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( snake ) -> ( turtle ) -> nil
+class LinkedList
+  
+end
