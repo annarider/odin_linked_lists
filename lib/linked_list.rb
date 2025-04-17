@@ -17,14 +17,15 @@ class LinkedList
   end
 
   def append(value)
-    node = Node.new(value)
-    current = @head
-    return @head = node if current.nil?
-
-    unless current.next_node.nil?
-      current = current.next_node
+    if @head.nil?
+      @head = Node.new(value)
+    else
+      current = @head
+      until current.next_node.nil?
+        current = current.next_node
+      end
+      current.next_node = Node.new(value)
     end
-    current.next_node = node if current.next_node.nil?
   end
 
   def prepend(value)
@@ -35,7 +36,7 @@ class LinkedList
   def to_s
     list = ''
     current = @head
-    unless current.next_node.nil?
+    until current.next_node.nil?
       list += "( #{current.value} ) -> "
       current = current.next_node
     end
