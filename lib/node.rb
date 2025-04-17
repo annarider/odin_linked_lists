@@ -2,9 +2,9 @@
 
 # Node defines a node in the
 # LinkedList class. It contains
-# the data value and points to 
+# the data value and points to
 # the next node.
-# 
+#
 # @example Create a new Node
 # node = Node.new
 #

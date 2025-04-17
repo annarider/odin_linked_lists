@@ -1,17 +1,15 @@
 # frozen_string_literal: true
 
-# LinkedList contains the methods
+require_relative 'node'
+
 # for implementing LinkedLists in
+# LinkedList contains the methods
 # Ruby.
-# 
+#
 # @example Create a new LinkedList
 # list = LinkedList.new
 #
-require_relative 'node'
-
 class LinkedList
-  attr_accessor :head
-
   def initialize
     @head = nil
   end
@@ -21,9 +19,7 @@ class LinkedList
       @head = Node.new(value)
     else
       current = @head
-      until current.next_node.nil?
-        current = current.next_node
-      end
+      current = current.next_node until current.next_node.nil?
       current.next_node = Node.new(value)
     end
   end
@@ -46,20 +42,18 @@ class LinkedList
       size += 1
       current = current.next_node
     end
-    size += 1
+    size + 1
   end
- 
+
   def head
-    @head.value    
+    @head.value
   end
 
   def tail
     return nil if @head.nil?
 
     current = @head
-    until current.next_node.nil?
-      current = current.next_node
-    end
+    current = current.next_node until current.next_node.nil?
     current.value
   end
 
@@ -89,7 +83,7 @@ class LinkedList
 
   def contains?(value)
     return nil if @head.nil?
-    
+
     current = @head
     until current.next_node.nil?
       return true if current.value == value
@@ -112,7 +106,7 @@ class LinkedList
   end
 
   def insert_at(value, index)
-    return prepend(value) if index == 0
+    return prepend(value) if index.zero?
 
     return append(value) if index > size
 
