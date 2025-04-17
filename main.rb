@@ -34,3 +34,10 @@ puts list.find('hamster')
 p list.find('deer')
 puts list.pop
 puts list
+
+list.insert_at('bee', 1)
+puts list
+list.insert_at('turtle', 3)
+list.insert_at('zebra', 23)
+puts list
+puts list.size

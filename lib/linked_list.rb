@@ -111,6 +111,32 @@ class LinkedList
     nil
   end
 
+  def insert_at(value, index)
+    return prepend(value) if index == 0
+
+    return append(value) if index > size
+
+    current_index = 0
+    current = @head
+    until current.next_node.nil? || current_index == index
+      current_index += 1
+      previous = current
+      current = current.next_node
+    end
+    previous.next_node = Node.new(value, current)
+  end
+
+  def remove_at(index)
+    current_index = 0
+    current = @head
+    until current.next_node.nil? || current_index == index
+      current_index += 1
+      previous = current
+      current = current.next_node
+    end
+    previous.next_node = current.next_node
+  end
+
   def to_s
     list = ''
     current = @head
