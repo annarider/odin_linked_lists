@@ -82,25 +82,15 @@ class LinkedList
   end
 
   def contains?(value)
-    return nil if @head.nil?
-
-    current = @head
-    until current.next_node.nil?
+    traverse do |current, _|
       return true if current.value == value
-
-      current = current.next_node
     end
     false
   end
 
   def find(value)
-    index = 0
-    current = @head
-    until current.next_node.nil?
+    traverse do |current, index|
       return index if current.value == value
-
-      index += 1
-      current = current.next_node
     end
     nil
   end
@@ -140,5 +130,19 @@ class LinkedList
     end
     list += "( #{current.value} ) -> nil" if current.next_node.nil?
     list
+  end
+
+  private
+
+  def traverse
+    return nil if @head.nil?
+
+    current = @head
+    index = 0
+    until current.nil?
+      yield(current, index) if block_given?
+      current = current.next_node
+      index += 1
+    end
   end
 end
